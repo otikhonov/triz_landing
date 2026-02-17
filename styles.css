@@ -78,6 +78,18 @@ h1 {
   margin: 0 0 20px;
 }
 
+.hero-offer {
+  display: inline-block;
+  font-size: clamp(20px, 2.3vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+}
+
 .hero-lead {
   color: #d9d9d9;
   margin: 0 0 24px;
@@ -284,6 +296,50 @@ h1 {
   background: linear-gradient(135deg, rgba(64, 224, 208, 0.2), rgba(74, 144, 226, 0.15));
 }
 
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.fact-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(24, 34, 52, 0.28));
+  border: 1px solid rgba(124, 182, 255, 0.16);
+  border-radius: 14px;
+  min-height: 170px;
+  padding: 20px 16px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.fact-value {
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1;
+  min-height: 64px;
+  display: grid;
+  align-items: center;
+  color: #59e8da;
+  text-shadow: 0 0 24px rgba(89, 232, 218, 0.18);
+}
+
+.fact-value--infinity {
+  font-size: clamp(56px, 6vw, 72px);
+  line-height: 0.85;
+}
+
+.fact-label {
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #cdd7e9;
+  max-width: 22ch;
+}
+
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -357,23 +413,96 @@ h1 {
   max-width: 780px;
 }
 
+.trust-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 0 0;
+  text-align: center;
+}
+
+.trust-card .section-title {
+  margin: 0 auto 14px;
+  max-width: 1040px;
+}
+
+.trust-card .section-lead {
+  margin: 0 auto 24px;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.trust-logos-grid {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.trust-logo-item {
+  min-height: 104px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(27, 39, 62, 0.18));
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+
+.trust-logo-item img {
+  width: min(78%, 170px);
+  height: 58px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.7) contrast(0.8);
+  opacity: 0.9;
+  transform: scale(var(--logo-scale, 1));
+  transform-origin: center;
+}
+
+.trust-logo-item--text,
+.trust-logo-item--muted {
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: rgba(226, 235, 248, 0.8);
+}
+
+.trust-logo-item--muted {
+  color: rgba(226, 235, 248, 0.45);
+}
+
+.trust-logo-item--scale-md {
+  --logo-scale: 1.2;
+}
+
+.trust-logo-item--scale-lg {
+  --logo-scale: 1.55;
+}
+
 .module-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
 .module-card {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 0;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 28px;
   padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.module-card--bonus {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 10px);
+  justify-self: center;
+}
+
 .module-main {
-  padding: 8px 4px 8px 8px;
+  padding: 8px;
 }
 
 .module-label {
@@ -385,7 +514,7 @@ h1 {
 
 .module-title {
   font-size: 22px;
-  margin: 0 0 10px;
+  margin: 0;
 }
 
 .module-text {
@@ -461,79 +590,73 @@ h1 {
   box-shadow: 0 8px 20px rgba(64, 224, 208, 0.25);
 }
 
-.pricing-card {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 24px;
-  padding: 28px;
-  display: grid;
-  gap: 18px;
-}
-
-.pricing-card--full {
-  gap: 24px;
+.pricing-head {
+  margin-bottom: 20px;
 }
 
 .pricing-title {
-  font-size: 24px;
+  font-size: clamp(28px, 4vw, 52px);
   font-family: "Unbounded", sans-serif;
 }
 
-.pricing-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.price-old {
-  color: var(--muted);
-  text-decoration: line-through;
-  font-size: 16px;
-}
-
-.price-new {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.signup-panel {
-  padding-top: 8px;
-}
-
-.signup-title {
-  font-family: "Unbounded", sans-serif;
-  font-size: clamp(24px, 4vw, 44px);
-  margin-bottom: 18px;
-}
-
-.signup-form {
+.tariff-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.signup-form input {
-  padding: 16px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  font-size: 14px;
+.tariff-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  gap: 16px;
 }
 
-.signup-form input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.tariff-card--pro {
+  background: linear-gradient(145deg, rgba(37, 81, 172, 0.5), rgba(23, 48, 102, 0.7));
+  border-color: rgba(120, 170, 255, 0.35);
 }
 
-.signup-note {
-  display: flex;
-  align-items: center;
+.tariff-name {
+  font-family: "Unbounded", sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+.tariff-price {
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 800;
+  font-family: "Unbounded", sans-serif;
+}
+
+.tariff-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
   gap: 10px;
-  margin-top: 12px;
-  font-size: 12px;
-  color: var(--muted);
+}
+
+.tariff-list li {
+  padding-left: 18px;
+  position: relative;
+  color: #e5e5e5;
+  line-height: 1.45;
+}
+
+.tariff-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.tariff-btn {
+  margin-top: 8px;
+  width: 100%;
 }
 
 .bg-blob {
@@ -595,15 +718,31 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .trust-logos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .module-card {
     grid-template-columns: 1fr;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-card--bonus {
+    max-width: none;
   }
 
   .instructor-card {
     grid-template-columns: 1fr;
   }
 
-  .signup-form {
+  .tariff-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -619,8 +758,16 @@ h1 {
     flex-direction: column;
     align-items: stretch;
   }
-}
-.signup-form .btn-primary {
-  padding: 16px 26px;
-  font-size: 15px;
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-logos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-label {
+    font-size: 18px;
+  }
 }
