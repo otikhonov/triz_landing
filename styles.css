@@ -92,8 +92,16 @@ h1 {
 
 .hero-lead {
   color: #d9d9d9;
-  margin: 0 0 24px;
+  margin: 0 0 14px;
   font-size: 16px;
+}
+
+.hero-value {
+  color: rgba(229, 238, 247, 0.9);
+  margin: 0 0 26px;
+  max-width: 58ch;
+  font-size: 16px;
+  line-height: 1.45;
 }
 
 .hero-list {
@@ -302,6 +310,10 @@ h1 {
   gap: 16px;
 }
 
+.facts-grid--after-skills {
+  margin: 24px 0 0;
+}
+
 .fact-card {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(24, 34, 52, 0.28));
   border: 1px solid rgba(124, 182, 255, 0.16);
@@ -421,15 +433,27 @@ h1 {
   text-align: center;
 }
 
-.trust-card .section-title {
-  margin: 0 auto 14px;
-  max-width: 1040px;
+.trust-card--inline {
+  margin-top: 18px;
+  padding-top: 0;
 }
 
-.trust-card .section-lead {
-  margin: 0 auto 24px;
-  font-size: clamp(18px, 2vw, 22px);
-  color: rgba(255, 255, 255, 0.72);
+.trust-title {
+  margin: 0 0 6px;
+  max-width: 920px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.35;
+  font-weight: 600;
+  color: #dbe5f4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trust-subtitle {
+  margin: 0 0 14px;
+  font-size: clamp(14px, 1.2vw, 17px);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .trust-logos-grid {
@@ -718,6 +742,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .hero-value {
+    max-width: none;
+  }
+
   .trust-logos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -765,6 +793,10 @@ h1 {
 
   .trust-logos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .trust-title {
+    font-size: clamp(16px, 4.6vw, 20px);
   }
 
   .fact-label {
