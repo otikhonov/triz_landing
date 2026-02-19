@@ -44,6 +44,15 @@ h1 {
   margin-bottom: 28px;
 }
 
+.section-title--local {
+  font-size: clamp(22px, 2.3vw, 30px);
+  margin-bottom: 18px;
+}
+
+.section-title--aligned {
+  margin-top: 10px;
+}
+
 .container {
   width: min(1200px, 92vw);
   margin: 0 auto;
@@ -304,6 +313,69 @@ h1 {
   background: linear-gradient(135deg, rgba(64, 224, 208, 0.2), rgba(74, 144, 226, 0.15));
 }
 
+.testimonial-wrap {
+  align-self: stretch;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.testimonial-card {
+  margin: 0;
+  position: relative;
+  border-radius: 20px;
+  padding: 26px 24px 24px 28px;
+  background: linear-gradient(145deg, rgba(112, 222, 244, 0.28), rgba(72, 148, 214, 0.3));
+  border: 1px solid rgba(143, 219, 255, 0.26);
+  color: #dff5ff;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: -12px;
+  width: 22px;
+  height: 22px;
+  transform: rotate(45deg);
+  background: rgba(98, 196, 238, 0.85);
+  border-left: 1px solid rgba(143, 219, 255, 0.26);
+  border-bottom: 1px solid rgba(143, 219, 255, 0.26);
+}
+
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-family: "Unbounded", sans-serif;
+  font-size: 42px;
+  line-height: 1;
+  color: rgba(225, 246, 255, 0.55);
+  pointer-events: none;
+}
+
+.testimonial-card p {
+  margin: 0;
+  font-style: italic;
+}
+
+.testimonial-author {
+  padding-left: 10px;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  color: #eef7ff;
+}
+
+.testimonial-role {
+  color: rgba(220, 234, 250, 0.7);
+  font-size: 14px;
+}
+
 .facts-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -389,7 +461,7 @@ h1 {
 
 .instructor-card {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: minmax(320px, 36%) 1fr;
   gap: 24px;
   padding: 24px;
   border-radius: 24px;
@@ -398,15 +470,14 @@ h1 {
 }
 
 .instructor-photo {
-  height: 220px;
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  object-position: center center;
   border-radius: 20px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, rgba(64, 224, 208, 0.2), rgba(74, 144, 226, 0.18));
-  color: var(--muted);
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  display: block;
+  background: rgba(12, 16, 24, 0.85);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
 .instructor-name {
@@ -770,6 +841,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .instructor-photo {
+    height: min(64vw, 420px);
+  }
+
   .tariff-grid {
     grid-template-columns: 1fr;
   }
@@ -801,5 +876,10 @@ h1 {
 
   .fact-label {
     font-size: 18px;
+  }
+
+  .testimonial-card {
+    font-size: 16px;
+    padding: 18px;
   }
 }
