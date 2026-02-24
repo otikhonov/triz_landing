@@ -11,8 +11,17 @@
   <div class="bg-blob blob-2"></div>
   <div class="bg-blob blob-3"></div>
 
-  <header class="site-header container">
-    <div class="brand"></div>
+  <header class="site-header-wrap">
+    <div class="site-header container">
+      <a class="brand" href="#hero"></a>
+      <nav class="top-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="#hero">О курсе</a>
+        <a class="nav-link" href="#reviews">Отзывы</a>
+        <a class="nav-link" href="#format">Формат курса</a>
+        <a class="nav-link" href="#instructor">Преподаватель</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="#pricing">Записаться</a>
+    </div>
   </header>
 
   <main>
@@ -69,62 +78,70 @@
           <div class="section-title section-title--local">Руководители часто сталкиваются с проблемами:</div>
           <ul class="bullet-list">
             <li>Разные участники требуют взаимоисключающих решений</li>
-            <li>Новые задачи не решаются привычными инструментами</li>
-            <li>Высокая цена ошибки</li>
-            <li>Необходимость быстро принимать эффективные решения</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="problem">
-      <div class="grid-2">
-        <div class="text-block">
-          <div class="section-title section-title--local section-title--aligned">В период трансформации управленческие противоречия неизбежны</div>
-          <ul class="bullet-list">
             <li>Улучшая одно, вы неизбежно ухудшаете другое</li>
-            <li>Старый управленческий опыт перестаёт работать в новом контексте</li>
-            <li>Команда ждёт ясности, а решения приходится принимать интуитивно</li>
-            <li>Нет общего языка, чтобы договориться о сути проблемы</li>
+            <li>Новые задачи не решаются привычными инструментами</li>
+            <li>Цена ошибки слишком высока, чтобы действовать интуитивно</li>
           </ul>
-        </div>
-        <div class="card-visual">
-          <img
-            class="section-image"
-            src="assets/section-problems.png"
-            alt="Визуализация управленческих противоречий в период трансформации"
-            loading="lazy"
-          />
         </div>
       </div>
     </section>
 
-    <section class="section container" id="reviews">
-      <div class="reviews-head">
-        <div class="section-title">Отзывы участников курса</div>
-        <div class="reviews-nav">
-          <button class="reviews-arrow" id="reviews-prev" type="button" aria-label="Предыдущие отзывы">←</button>
-          <button class="reviews-arrow" id="reviews-next" type="button" aria-label="Следующие отзывы">→</button>
-        </div>
+    <section class="section container" id="fit">
+      <div class="section-title">Программа подойдёт</div>
+      <div class="fit-list">
+        <article class="fit-item">
+          <div class="fit-left">
+            <div class="fit-thumb fit-thumb--1" aria-hidden="true">01</div>
+            <h3 class="fit-name">Начинающим руководителям</h3>
+          </div>
+          <div class="fit-text">
+            <p>На новой карьерной ступени вы столкнулись с задачами более высокого уровня.</p>
+            <p>Вы научитесь работать со стратегическими и противоречивыми задачами, определять свою роль в системе компании и принимать эффективные решения, когда прежний опыт не даёт результата.</p>
+          </div>
+        </article>
+
+        <article class="fit-item">
+          <div class="fit-left">
+            <div class="fit-thumb fit-thumb--2" aria-hidden="true">02</div>
+            <h3 class="fit-name">Руководителям, сменившим работу</h3>
+          </div>
+          <div class="fit-text">
+            <p>Вы пришли в новую компанию и пытаетесь применить старый опыт и инструментарий в новых условиях.</p>
+            <p>Вы сможете быстрее адаптироваться, разобраться в структуре и ожиданиях к вашей роли, а также получить системные инструменты для достижения требуемых показателей.</p>
+          </div>
+        </article>
+
+        <article class="fit-item">
+          <div class="fit-left">
+            <div class="fit-thumb fit-thumb--3" aria-hidden="true">03</div>
+            <h3 class="fit-name">Руководителям в период трансформации</h3>
+          </div>
+          <div class="fit-text">
+            <p>Компания меняется, а вместе с ней - цели, процессы и требования к команде.</p>
+            <p>Вы научитесь оперативно адаптировать команду к новым условиям, работать с противоречиями и принимать решения, которые обеспечивают достижение целевых показателей.</p>
+          </div>
+        </article>
       </div>
-      <div class="reviews-viewport">
-        <div class="reviews-track" id="reviews-track">
-          <article class="review-card">
-            <div class="review-name">Ирина</div>
-            <div class="review-role">Топ-менеджер, руководитель макрорегиона</div>
-            <p class="review-text">Я умею интуитивно решать сложные задачи, но интуицию невозможно передать команде. Мой запрос был в том, чтобы найти инструмент, который позволит передать способ мышления сотрудникам. Благодаря курсу я получила структуру, через которую можно обучать команду думать, а не просто выполнять задачи. Это дало возможность масштабировать управленческое мышление внутри команды.</p>
-          </article>
-          <article class="review-card">
-            <div class="review-name">Станислава</div>
-            <div class="review-role">Руководитель департамента развития клиентского опыта</div>
-            <p class="review-text">Я пришла на курс со сложной задачей, которая тянулась исторически и не решалась. В процессе работы поняла, что до этого мы закрывали точечные боли, а не всю проблему целиком. С помощью инструментов курса мы разложили задачу на элементы, увидели корневые причины и выстроили цепочку решений, которая решила её системно.</p>
-          </article>
-          <article class="review-card">
-            <div class="review-name">Андрей</div>
-            <div class="review-role">Руководитель продуктового направления</div>
-            <p class="review-text">Благодаря курсу я получил инструмент, через который можно посмотреть на проблему системно и найти самое эффективное решение, а не первое, пришедшее на ум. Это помогает принимать взвешенные управленческие решения, особенно в ситуациях, где высокая цена ошибки.</p>
-          </article>
-        </div>
+    </section>
+
+    <section class="section container" id="facts">
+      <div class="facts-grid facts-grid--after-skills">
+        <article class="fact-card">
+          <div class="fact-value">5</div>
+          <div class="fact-label">ПРАКТИЧЕСКИХ ВОРКШОПОВ</div>
+        </article>
+        <article class="fact-card">
+          <div class="fact-value">100%</div>
+          <div class="fact-label">РАБОТЫ НА ПРАКТИКЕ</div>
+        </article>
+        <article class="fact-card">
+          <div class="fact-value fact-value--infinity">∞</div>
+          <div class="fact-label">БЕССРОЧНЫЙ ДОСТУП К ТЕОРИИ</div>
+        </article>
+        <article class="fact-card">
+          <div class="fact-value">10+</div>
+          <div class="fact-label">УПРАВЛЕНЧЕСКИХ ИНСТРУМЕНТОВ</div>
+        </article>
       </div>
     </section>
 
@@ -154,73 +171,34 @@
       </div>
     </section>
 
-    <section class="section container" id="facts">
-      <div class="facts-grid facts-grid--after-skills">
-        <article class="fact-card">
-          <div class="fact-value">5</div>
-          <div class="fact-label">ПРАКТИЧЕСКИХ ВОРКШОПОВ</div>
+    <section class="section container" id="format">
+      <div class="section-title">Формат обучения</div>
+      <div class="format-grid">
+        <article class="format-card">
+          <h3 class="format-card-title">5 онлайн-модулей</h3>
+          <p class="format-card-text">Практические воркшопы с разбором реальных кейсов.</p>
         </article>
-        <article class="fact-card">
-          <div class="fact-value">100%</div>
-          <div class="fact-label">РАБОТЫ НА ПРАКТИКЕ</div>
+        <article class="format-card">
+          <h3 class="format-card-title">Теория заранее</h3>
+          <p class="format-card-text">Изучаете материалы до встречи.</p>
         </article>
-        <article class="fact-card">
-          <div class="fact-value fact-value--infinity">∞</div>
-          <div class="fact-label">БЕССРОЧНЫЙ ДОСТУП К ТЕОРИИ</div>
+        <article class="format-card">
+          <h3 class="format-card-title">2 часа — каждый модуль</h3>
+          <p class="format-card-text">Воркшопы раз в неделю, на них разбор инструментов на практике.</p>
         </article>
-        <article class="fact-card">
-          <div class="fact-value">10+</div>
-          <div class="fact-label">УПРАВЛЕНЧЕСКИХ ИНСТРУМЕНТОВ</div>
+        <article class="format-card">
+          <h3 class="format-card-title">Максимум практики</h3>
+          <p class="format-card-text">Инструменты сразу применяются на реальных задачах.</p>
         </article>
-      </div>
-    </section>
-
-    <section class="section container" id="skills">
-      <div class="section-title">Вы научитесь</div>
-      <div class="skill-grid">
-        <div class="skill-card">
-          <div class="skill-num">1</div>
-          <div class="skill-title">Работать с противоречиями</div>
-          <div class="skill-text">Находить решения в ситуациях, где улучшение одного приводит к ухудшению другого.</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-num">2</div>
-          <div class="skill-title">Быть сильным, рационально мыслящим лидером</div>
-          <div class="skill-text">Объяснять сложные решения стейкхолдерам и команде.</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-num">3</div>
-          <div class="skill-title">Выявлять требования стейкхолдеров</div>
-          <div class="skill-text">Отделять реальные требования от позиций и ожиданий.</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-num">4</div>
-          <div class="skill-title">Решать нестандартные управленческие задачи</div>
-          <div class="skill-text">Там, где опыт и шаблоны не работают.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="instructor">
-      <div class="section-title">Преподаватель курса</div>
-      <div class="instructor-card">
-        <img class="instructor-photo" src="assets/nikolay-saunin.jpg" alt="Николай Саунин" loading="lazy" />
-        <div class="instructor-info">
-          <h3 class="instructor-name">Николай Саунин</h3>
-          <div class="instructor-role">Директор департамента ТРИЗ в АО «НижКомАвто» (крупнейший производитель коммерческого автотранспорта в РФ)</div>
-          <ul class="bullet-list">
-            <li>15 лет изучает решение изобретательских и управленческих задач</li>
-            <li>Преподаватель программ EMBA ВШБ МГУ</li>
-            <li>Более 10 лет предпринимательского опыта - строил и продавал бизнесы в сфере торговли, производства, образования, Media, PR и GR</li>
-            <li>Предприниматель года Московской области (2011)</li>
-          </ul>
-        </div>
+        <article class="format-card format-card--wide">
+          <h3 class="format-card-title">Закрытое сообщество руководителей</h3>
+          <p class="format-card-text">Совместная работа над управленческими кейсами, нетворкинг и обмен опытом.</p>
+        </article>
       </div>
     </section>
 
     <section class="section container" id="program">
       <div class="section-title">Программа курса</div>
-      <p class="section-lead">Курс состоит из 5 онлайн-модулей. Каждый модуль проходит в формате практического воркшопа: теория изучается заранее, а на встрече участники работают с кейсами и отрабатывают инструмент на практике.</p>
       <div class="module-grid">
         <article class="module-card">
           <div class="module-main">
@@ -279,6 +257,81 @@
           <div class="trust-logo-item trust-logo-item--scale-lg"><img src="assets/unilever-logo.svg" alt="Unilever" loading="lazy" /></div>
           <div class="trust-logo-item trust-logo-item--scale-lg"><img src="assets/scg-logo.svg" alt="SCG" loading="lazy" /></div>
           <div class="trust-logo-item trust-logo-item--scale-lg"><img src="assets/The-Wrigley-Company-01.svg" alt="Wrigley" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="reviews">
+      <div class="reviews-head">
+        <div class="section-title">Отзывы участников курса</div>
+        <div class="reviews-nav">
+          <button class="reviews-arrow" id="reviews-prev" type="button" aria-label="Предыдущие отзывы">←</button>
+          <button class="reviews-arrow" id="reviews-next" type="button" aria-label="Следующие отзывы">→</button>
+        </div>
+      </div>
+      <div class="reviews-viewport">
+        <div class="reviews-track" id="reviews-track">
+          <article class="review-card">
+            <div class="review-name">Ирина</div>
+            <div class="review-role">Топ-менеджер, руководитель макрорегиона</div>
+            <p class="review-text">Я умею интуитивно решать сложные задачи, но интуицию невозможно передать команде. Мой запрос был в том, чтобы найти инструмент, который позволит передать способ мышления сотрудникам.
+              <br>Благодаря курсу я получила структуру, через которую можно обучать команду думать, а не просто выполнять задачи. Это дало возможность масштабировать управленческое мышление внутри команды.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-name">Станислава</div>
+            <div class="review-role">Руководитель департамента развития клиентского опыта</div>
+            <p class="review-text">Я пришла на курс со сложной задачей, которая тянулась исторически и не решалась. В процессе работы поняла, что до этого мы закрывали точечные боли, а не всю проблему целиком.
+              <br>С помощью инструментов курса мы разложили задачу на элементы, увидели корневые причины и выстроили цепочку решений, которая решила её системно.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-name">Андрей</div>
+            <div class="review-role">Руководитель продуктового направления</div>
+            <p class="review-text">Благодаря курсу я получил инструмент, через который можно посмотреть на проблему системно и найти самое эффективное решение, а не первое, пришедшее на ум.
+              <br>Это помогает принимать взвешенные управленческие решения, особенно в ситуациях, где высокая цена ошибки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="skills">
+      <div class="section-title">Вы научитесь</div>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <div class="skill-num">1</div>
+          <div class="skill-title">Работать с противоречиями</div>
+          <div class="skill-text">Находить решения в ситуациях, где улучшение одного приводит к ухудшению другого.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">2</div>
+          <div class="skill-title">Быть сильным, рационально мыслящим лидером</div>
+          <div class="skill-text">Объяснять сложные решения стейкхолдерам и команде.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">3</div>
+          <div class="skill-title">Выявлять требования стейкхолдеров</div>
+          <div class="skill-text">Отделять реальные требования от позиций и ожиданий.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-num">4</div>
+          <div class="skill-title">Решать нестандартные управленческие задачи</div>
+          <div class="skill-text">Там, где опыт и шаблоны не работают.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="instructor">
+      <div class="section-title">Преподаватель курса</div>
+      <div class="instructor-card">
+        <img class="instructor-photo" src="assets/nikolay-saunin.jpg" alt="Николай Саунин" loading="lazy" />
+        <div class="instructor-info">
+          <h3 class="instructor-name">Николай Саунин</h3>
+          <div class="instructor-role">Директор департамента ТРИЗ в АО «НижКомАвто» (крупнейший производитель коммерческого автотранспорта в РФ)</div>
+          <ul class="bullet-list">
+            <li>15 лет изучает решение изобретательских и управленческих задач</li>
+            <li>Преподаватель программ EMBA ВШБ МГУ</li>
+            <li>Более 10 лет предпринимательского опыта - строил и продавал бизнесы в сфере торговли, производства, образования, Media, PR и GR</li>
+            <li>Предприниматель года Московской области (2011)</li>
+          </ul>
         </div>
       </div>
     </section>
