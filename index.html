@@ -99,6 +99,35 @@
       </div>
     </section>
 
+    <section class="section container" id="reviews">
+      <div class="reviews-head">
+        <div class="section-title">Отзывы участников курса</div>
+        <div class="reviews-nav">
+          <button class="reviews-arrow" id="reviews-prev" type="button" aria-label="Предыдущие отзывы">←</button>
+          <button class="reviews-arrow" id="reviews-next" type="button" aria-label="Следующие отзывы">→</button>
+        </div>
+      </div>
+      <div class="reviews-viewport">
+        <div class="reviews-track" id="reviews-track">
+          <article class="review-card">
+            <div class="review-name">Ирина</div>
+            <div class="review-role">Топ-менеджер, руководитель макрорегиона</div>
+            <p class="review-text">Я умею интуитивно решать сложные задачи, но интуицию невозможно передать команде. Мой запрос был в том, чтобы найти инструмент, который позволит передать способ мышления сотрудникам. Благодаря курсу я получила структуру, через которую можно обучать команду думать, а не просто выполнять задачи. Это дало возможность масштабировать управленческое мышление внутри команды.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-name">Станислава</div>
+            <div class="review-role">Руководитель департамента развития клиентского опыта</div>
+            <p class="review-text">Я пришла на курс со сложной задачей, которая тянулась исторически и не решалась. В процессе работы поняла, что до этого мы закрывали точечные боли, а не всю проблему целиком. С помощью инструментов курса мы разложили задачу на элементы, увидели корневые причины и выстроили цепочку решений, которая решила её системно.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-name">Андрей</div>
+            <div class="review-role">Руководитель продуктового направления</div>
+            <p class="review-text">Благодаря курсу я получил инструмент, через который можно посмотреть на проблему системно и найти самое эффективное решение, а не первое, пришедшее на ум. Это помогает принимать взвешенные управленческие решения, особенно в ситуациях, где высокая цена ошибки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section container" id="solution">
       <div class="section-title">Вы освоите системный подход и сможете:</div>
       <div class="grid-2">
@@ -128,12 +157,12 @@
     <section class="section container" id="facts">
       <div class="facts-grid facts-grid--after-skills">
         <article class="fact-card">
-          <div class="fact-value">4</div>
-          <div class="fact-label">ИНТЕНСИВНЫЕ НЕДЕЛИ</div>
+          <div class="fact-value">5</div>
+          <div class="fact-label">ПРАКТИЧЕСКИХ ВОРКШОПОВ</div>
         </article>
         <article class="fact-card">
           <div class="fact-value">100%</div>
-          <div class="fact-label">ПРАКТИЧЕСКАЯ РАБОТА</div>
+          <div class="fact-label">РАБОТЫ НА ПРАКТИКЕ</div>
         </article>
         <article class="fact-card">
           <div class="fact-value fact-value--infinity">∞</div>
@@ -284,6 +313,50 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (function () {
+      const track = document.getElementById("reviews-track");
+      const prev = document.getElementById("reviews-prev");
+      const next = document.getElementById("reviews-next");
+      if (!track || !prev || !next) return;
+
+      const cards = Array.from(track.children);
+      let page = 0;
+
+      function perPage() {
+        return window.matchMedia("(max-width: 900px)").matches ? 1 : 2;
+      }
+
+      function maxPage() {
+        return Math.max(0, Math.ceil(cards.length / perPage()) - 1);
+      }
+
+      function update() {
+        const currentMax = maxPage();
+        if (page > currentMax) page = currentMax;
+        const targetIndex = page * perPage();
+        const targetCard = cards[Math.min(targetIndex, cards.length - 1)];
+        const shift = targetCard ? targetCard.offsetLeft : 0;
+        track.style.transform = "translateX(-" + shift + "px)";
+        prev.disabled = page === 0;
+        next.disabled = page === currentMax;
+      }
+
+      prev.addEventListener("click", function () {
+        page = Math.max(0, page - 1);
+        update();
+      });
+
+      next.addEventListener("click", function () {
+        page = Math.min(maxPage(), page + 1);
+        update();
+      });
+
+      window.addEventListener("resize", update);
+      update();
+    })();
+  </script>
 
 </body>
 </html>

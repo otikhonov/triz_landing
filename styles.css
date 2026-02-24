@@ -313,6 +313,75 @@ h1 {
   background: linear-gradient(135deg, rgba(64, 224, 208, 0.2), rgba(74, 144, 226, 0.15));
 }
 
+.reviews-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.reviews-head .section-title {
+  margin-bottom: 0;
+}
+
+.reviews-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.reviews-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #d5e7ff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.reviews-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.reviews-viewport {
+  overflow: hidden;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.review-card {
+  flex: 0 0 calc((100% - 20px) / 2);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.review-name {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.review-role {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.review-text {
+  margin: 0;
+  color: #e2e7f3;
+  line-height: 1.5;
+}
+
 .testimonial-wrap {
   align-self: stretch;
   display: grid;
@@ -813,6 +882,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .review-card {
+    flex-basis: 100%;
+  }
+
   .hero-value {
     max-width: none;
   }
@@ -860,6 +933,10 @@ h1 {
   .hero-ctas {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .reviews-head {
+    align-items: center;
   }
 
   .facts-grid {
