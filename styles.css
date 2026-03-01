@@ -117,6 +117,74 @@ h1 {
   white-space: nowrap;
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 12, 0.78);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 120;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal-card {
+  width: min(520px, 100%);
+  background: linear-gradient(145deg, rgba(17, 22, 34, 0.98), rgba(14, 18, 28, 0.98));
+  border: 1px solid rgba(124, 182, 255, 0.22);
+  border-radius: 18px;
+  padding: 22px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #d7e9ff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-title {
+  margin: 0 0 14px;
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.modal-form {
+  display: grid;
+  gap: 10px;
+}
+
+.modal-label {
+  color: #c9d6ea;
+  font-size: 14px;
+}
+
+.modal-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(132, 168, 221, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+  color: #f3f8ff;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.modal-input:focus {
+  outline: none;
+  border-color: rgba(93, 240, 181, 0.8);
+  box-shadow: 0 0 0 2px rgba(93, 240, 181, 0.2);
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -192,6 +260,10 @@ h1 {
   font-weight: 600;
   cursor: pointer;
   font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary {

@@ -32,8 +32,8 @@
         <p class="hero-lead">Практическая программа для руководителей, которые вошли в новую роль или проходят через изменения.</p>
         <p class="hero-value"><strong>Результат:</strong> Вы сможете решать новые и нестандартные управленческие задачи с помощью системы инструментов из курса.</p>
         <div class="hero-ctas">
-          <button class="btn btn-primary">Записаться со скидкой</button>
-          <button class="btn btn-secondary">Получить консультацию</button>
+          <a class="btn btn-primary" href="#pricing">Записаться со скидкой</a>
+          <button class="btn btn-secondary" type="button" id="open-consultation-modal">Получить консультацию</button>
         </div>
         <div class="hero-meta">
           <div class="meta-item">
@@ -375,6 +375,25 @@
     </section>
   </main>
 
+  <div class="modal-overlay" id="consultation-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title">
+      <button type="button" class="modal-close" id="close-consultation-modal" aria-label="Закрыть">×</button>
+      <h2 class="modal-title" id="consultation-modal-title">Получить консультацию</h2>
+      <form class="modal-form" action="#" method="post">
+        <label class="modal-label" for="consultation-name">Имя</label>
+        <input class="modal-input" id="consultation-name" name="name" type="text" placeholder="Ваше имя" required />
+
+        <label class="modal-label" for="consultation-phone">Телефон</label>
+        <input class="modal-input" id="consultation-phone" name="phone" type="tel" placeholder="+7 (999) 999-99-99" required />
+
+        <label class="modal-label" for="consultation-email">Почта</label>
+        <input class="modal-input" id="consultation-email" name="email" type="email" placeholder="mail@example.com" required />
+
+        <button class="btn btn-primary btn-full" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
   <script>
     (function () {
       const track = document.getElementById("reviews-track");
@@ -416,6 +435,38 @@
 
       window.addEventListener("resize", update);
       update();
+    })();
+
+    (function () {
+      const modal = document.getElementById("consultation-modal");
+      const openBtn = document.getElementById("open-consultation-modal");
+      const closeBtn = document.getElementById("close-consultation-modal");
+      if (!modal || !openBtn || !closeBtn) return;
+
+      function openModal() {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      openBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
     })();
   </script>
 
