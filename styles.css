@@ -947,6 +947,27 @@ h1 {
   margin-right: 10px;
 }
 
+#market .section-title,
+#market .bullet-list,
+#team-problems .section-title,
+#team-problems .bullet-list {
+  text-align: left;
+}
+
+#market .bullet-list li,
+#team-problems .bullet-list li {
+  padding-left: 18px;
+  font-size: clamp(19px, 1.35vw, 24px);
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+
+#market .bullet-list li::before,
+#team-problems .bullet-list li::before {
+  position: absolute;
+  margin-right: 0;
+}
+
 .insight-panel {
   max-width: 940px;
   margin: 0 auto;
